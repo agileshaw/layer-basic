@@ -209,7 +209,7 @@ def bootstrap_charm_deps():
         # Jinja2 3+ relies on MarkupSafe actually being installed prior to
         # attempting to be installed from the wheelhouse.  Thus, if MarkupSafe
         # and/or wheel are in _pkgs, then install them first.
-        _pre_packages = [p for p in _pkgs if p in ('wheel', 'MarkupSafe')]
+        _pre_packages = [p for p in _pkgs if p in ('wheel')]
         _pkgs = [p for p in _pkgs if p not in _pre_packages]
         for _pkgs_set in (_pre_packages, _pkgs):
             # add back the versions such that each package in pkgs is
